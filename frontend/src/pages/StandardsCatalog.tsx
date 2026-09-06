@@ -224,7 +224,17 @@ export default function StandardsCatalog() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 self-end sm:self-center">
+                <div className="flex items-center gap-3 self-end sm:self-center">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(`/compare?a=${encodeURIComponent(std.code)}`);
+                    }}
+                    className="text-[11px] font-mono px-2.5 py-1 border border-[#E5DFD5] text-slate-600 hover:bg-[#F3EFEA] hover:text-[#0B132B] transition-colors"
+                    data-testid={`catalog-compare-button-${i}`}
+                  >
+                    Compare
+                  </button>
                   <span className="text-xs font-semibold text-slate-600 group-hover:text-[#0B132B] flex items-center gap-1 font-mono">
                     <span>View clauses</span>
                     <ChevronRight className="w-4 h-4 text-slate-400 group-hover:translate-x-0.5 transition-transform" />

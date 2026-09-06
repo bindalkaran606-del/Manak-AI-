@@ -3,7 +3,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import { 
   ArrowLeft, 
   AlertTriangle, 
-  ExternalLink, 
+  ExternalLink,
+  ArrowLeftRight,
+
   Copy, 
   Check
 } from "lucide-react";
@@ -92,7 +94,15 @@ export default function StandardDetail() {
             <span className="text-[#0B132B] font-semibold">{standard.code}</span>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => navigate(`/compare?a=${encodeURIComponent(standard.code)}`)}
+              className="text-[#0B132B] hover:text-[#B81D24] flex items-center gap-1.5 font-sans font-semibold"
+              data-testid="standard-detail-compare-button"
+            >
+              <ArrowLeftRight className="w-3.5 h-3.5" />
+              <span>Compare with another standard</span>
+            </button>
             <a
               href="https://www.bis.gov.in/?lang=en"
               target="_blank"

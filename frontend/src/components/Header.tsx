@@ -107,6 +107,17 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTransparency }) => {
               IS Catalog
             </Link>
             <Link
+              to="/compare"
+              className={`px-3 py-1.5 rounded-sm transition-colors ${
+                isActive("/compare")
+                  ? "bg-[#0B132B] text-white font-semibold"
+                  : "text-slate-600 hover:text-[#0B132B] hover:bg-[#F3EFEA]"
+              }`}
+              data-testid="nav-compare-link"
+            >
+              Compare
+            </Link>
+            <Link
               to="/history"
               className={`px-3 py-1.5 rounded-sm transition-colors ${
                 isActive("/history")

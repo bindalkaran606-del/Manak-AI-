@@ -59,3 +59,8 @@
 - Corpus: 21 Indian Standards (was 11). New BIS-sourced entries in `backend/seed_extra.py` — Water & Utilities (IS 10500, IS 7634 Pt 2, IS 8329), Electrotechnical (IS 694, IS 732, IS 3043, IS 2026 Pt 1), Safety & Fire (IS 15683, IS 15298 Pt 2, IS 3521 Pt 2).
 - Print: `@page A4` + `body.printing-annexure` scoping prints only `#print-root` (the tender annexure) with page-break rules and a three-column signature block (Prepared / Checked / Approved) plus office-seal box. Triggered from Export Tender Appendix → Print / Save as PDF.
 - UI: headings now **Source Serif 4** (Lato retained for body, IBM Plex Mono for metadata); global corner radius reduced to ~3 px (all rounded-* utilities collapsed to rounded-sm); dialogs restyled as document sheets (square edges, no blur overlay, full-width 64rem / 52rem).
+
+## Update — Standard comparison
+- New route `/compare?a=<code>&b=<code>` (`frontend/src/pages/CompareStandards.tsx`), frontend-only: fetches both standards via `getStandardByCode` (useQueries) and diffs them client-side. No new backend endpoint or model.
+- Shows: two header cards, a difference summary strip (attributes differing / clauses in both / clauses unique to each), a 10-row institutional attribute table with Same/Differs flags and amber highlighting, matched-clause side-by-side blocks with tolerance limits, unique-clause columns, test-method shared/unique columns, shared keyword chips, and a print action.
+- Entry points: header nav "Compare", per-row "Compare" button in the IS Catalog, and "Compare with another standard" on the standard detail page. Codes live in the URL, so a comparison is shareable; Swap flips the two sides.

@@ -6,6 +6,7 @@ import NewRequirement from "@/pages/NewRequirement";
 import AnalysisResult from "@/pages/AnalysisResult";
 import StandardsCatalog from "@/pages/StandardsCatalog";
 import StandardDetail from "@/pages/StandardDetail";
+import CompareStandards from "@/pages/CompareStandards";
 import History from "@/pages/History";
 import Login from "@/pages/Login";
 
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/new" element={<NewRequirement />} />
         <Route path="/analysis/:id" element={<AnalysisResult />} />
         <Route path="/standards" element={<StandardsCatalog />} />
+        <Route path="/compare" element={<CompareStandards />} />
         <Route path="/standards/:code" element={<StandardDetail />} />
         <Route path="/history" element={<History />} />
         <Route path="/login" element={<Login />} />

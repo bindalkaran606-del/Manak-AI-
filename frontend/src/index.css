@@ -1,15 +1,19 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/plus-jakarta-sans";
-@import "@fontsource-variable/jetbrains-mono";
+@import "@fontsource/lato/300.css";
+@import "@fontsource/lato/400.css";
+@import "@fontsource/lato/700.css";
+@import "@fontsource/lato/900.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-heading: 'Plus Jakarta Sans Variable', system-ui, sans-serif;
-  --font-sans: 'Plus Jakarta Sans Variable', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono Variable', monospace;
+  --font-heading: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-sans: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
   --color-bis-red: #B81D24;
   --color-bis-red-hover: #991319;
@@ -112,7 +116,12 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.005em;
+    font-weight: 700;
+  }
+  /* Institutional label typography (BIS-style all-caps metadata) */
+  .font-mono {
+    letter-spacing: 0.01em;
   }
 }
 

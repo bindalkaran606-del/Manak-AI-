@@ -52,3 +52,4 @@
   - `department` now holds real BIS technical departments (ETD, CED, PGD, PCD).
   - `/api/stats` returns live DB counts only (no floor values, no invented precision/"gaps prevented" figures).
   - Footer carries an explicit BIS (bis.gov.in) sourcing + curated-subset disclaimer.
+- Typography: switched from Plus Jakarta Sans / JetBrains Mono to **Lato** (the typeface used on bis.gov.in) for all UI text and headings, with **IBM Plex Mono** for institutional metadata labels. Loaded via @fontsource/lato + @fontsource/ibm-plex-mono in index.css; heading tracking relaxed to -0.005em.

@@ -22,10 +22,10 @@ export default function Login() {
       <Header />
 
       <main className="flex-1 flex items-center justify-center p-4">
-        <div className="max-w-md w-full bg-white rounded-2xl border border-[#E5DFD5] shadow-lg p-8 space-y-6 guilloche-watermark">
+        <div className="max-w-md w-full bg-white rounded-sm border border-[#E5DFD5] shadow-lg p-8 space-y-6 guilloche-watermark">
           {/* Logo Emblem */}
           <div className="text-center space-y-2">
-            <div className="w-12 h-12 rounded-xl bg-[#B81D24] text-white flex items-center justify-center font-bold text-xl mx-auto shadow-md">
+            <div className="w-12 h-12 rounded-sm bg-[#B81D24] text-white flex items-center justify-center font-bold text-xl mx-auto shadow-md">
               मानक
             </div>
             <h1 className="text-xl font-bold tracking-tight text-[#0B132B]">
@@ -47,7 +47,7 @@ export default function Login() {
                   type="text"
                   value={officerId}
                   onChange={(e) => setOfficerId(e.target.value)}
-                  className="w-full pl-9 pr-3 py-2 rounded-lg border border-[#E5DFD5] bg-[#FAF8F5] focus:ring-1 focus:ring-[#B81D24] focus:outline-none text-slate-800 font-mono"
+                  className="w-full pl-9 pr-3 py-2 rounded-sm border border-[#E5DFD5] bg-[#FAF8F5] focus:ring-1 focus:ring-[#B81D24] focus:outline-none text-slate-800 font-mono"
                   required
                 />
               </div>
@@ -63,13 +63,13 @@ export default function Login() {
                   type="text"
                   value={department}
                   onChange={(e) => setDepartment(e.target.value)}
-                  className="w-full pl-9 pr-3 py-2 rounded-lg border border-[#E5DFD5] bg-[#FAF8F5] focus:ring-1 focus:ring-[#B81D24] focus:outline-none text-slate-800"
+                  className="w-full pl-9 pr-3 py-2 rounded-sm border border-[#E5DFD5] bg-[#FAF8F5] focus:ring-1 focus:ring-[#B81D24] focus:outline-none text-slate-800"
                   required
                 />
               </div>
             </div>
 
-            <div className="p-3 bg-[#FAF8F5] rounded-lg border border-[#E5DFD5] text-[11px] text-slate-600 space-y-1">
+            <div className="p-3 bg-[#FAF8F5] rounded-sm border border-[#E5DFD5] text-[11px] text-slate-600 space-y-1">
               <span className="font-semibold text-[#0B132B] flex items-center gap-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                 Demonstration Access Mode

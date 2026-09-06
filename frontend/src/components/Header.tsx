@@ -75,7 +75,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTransparency }) => {
           <nav className="hidden md:flex items-center gap-1 text-sm font-medium">
             <Link
               to="/dashboard"
-              className={`px-3 py-1.5 rounded-md transition-colors ${
+              className={`px-3 py-1.5 rounded-sm transition-colors ${
                 isActive("/") || isActive("/dashboard")
                   ? "bg-[#0B132B] text-white font-semibold"
                   : "text-slate-600 hover:text-[#0B132B] hover:bg-[#F3EFEA]"
@@ -86,7 +86,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTransparency }) => {
             </Link>
             <Link
               to="/new"
-              className={`px-3 py-1.5 rounded-md transition-colors ${
+              className={`px-3 py-1.5 rounded-sm transition-colors ${
                 isActive("/new")
                   ? "bg-[#0B132B] text-white font-semibold"
                   : "text-slate-600 hover:text-[#0B132B] hover:bg-[#F3EFEA]"
@@ -97,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTransparency }) => {
             </Link>
             <Link
               to="/standards"
-              className={`px-3 py-1.5 rounded-md transition-colors ${
+              className={`px-3 py-1.5 rounded-sm transition-colors ${
                 isActive("/standards")
                   ? "bg-[#0B132B] text-white font-semibold"
                   : "text-slate-600 hover:text-[#0B132B] hover:bg-[#F3EFEA]"
@@ -108,7 +108,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenTransparency }) => {
             </Link>
             <Link
               to="/history"
-              className={`px-3 py-1.5 rounded-md transition-colors ${
+              className={`px-3 py-1.5 rounded-sm transition-colors ${
                 isActive("/history")
                   ? "bg-[#0B132B] text-white font-semibold"
                   : "text-slate-600 hover:text-[#0B132B] hover:bg-[#F3EFEA]"

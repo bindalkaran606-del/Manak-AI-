@@ -3,6 +3,7 @@
 import asyncio
 from datetime import datetime
 from lib.db import client, db, ensure_indexes
+from seed_extra import EXTRA_STANDARDS
 
 STANDARDS_DATA = [
     {
@@ -816,9 +817,10 @@ async def seed():
     print("Seeding database with authentic Indian Standards and sample procurement analyses...")
     
     # 1. Upsert Standards
-    for std in STANDARDS_DATA:
+    all_standards = STANDARDS_DATA + EXTRA_STANDARDS
+    for std in all_standards:
         await db.standards.update_one({"code": std["code"]}, {"$set": std}, upsert=True)
-    print(f"Upserted {len(STANDARDS_DATA)} Indian Standards.")
+    print(f"Upserted {len(all_standards)} Indian Standards.")
 
     # 2. Upsert Analyses
     for analysis in INITIAL_ANALYSES:

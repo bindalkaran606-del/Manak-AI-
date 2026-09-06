@@ -139,8 +139,8 @@ import { useState } from "react";
          {/* Processing Pipeline Modal Overlay */}
          {processingState !== null && (
            <div className="fixed inset-0 z-50 bg-[#0B132B]/75 backdrop-blur-sm flex items-center justify-center p-4">
-             <div className="bg-white rounded-2xl border border-[#E5DFD5] shadow-2xl p-8 max-w-md w-full space-y-6 text-center guilloche-watermark">
-               <div className="w-12 h-12 rounded-xl bg-[#B81D24] text-white flex items-center justify-center font-bold text-xl mx-auto shadow-md">
+             <div className="bg-white rounded-sm border border-[#E5DFD5] shadow-2xl p-8 max-w-md w-full space-y-6 text-center guilloche-watermark">
+               <div className="w-12 h-12 rounded-sm bg-[#B81D24] text-white flex items-center justify-center font-bold text-xl mx-auto shadow-md">
                  मानक
                </div>
  
@@ -154,7 +154,7 @@ import { useState } from "react";
                </div>
  
                {/* Progress Steps List */}
-               <div className="space-y-3 text-left text-xs bg-[#FAF8F5] p-4 rounded-xl border border-[#E5DFD5]">
+               <div className="space-y-3 text-left text-xs bg-[#FAF8F5] p-4 rounded-sm border border-[#E5DFD5]">
                  <div className={`flex items-center gap-3 transition-colors ${processingState >= 1 ? "text-[#0B132B] font-semibold" : "text-slate-400"}`}>
                    <div className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-mono ${processingState >= 1 ? "bg-[#B81D24] text-white" : "bg-slate-200 text-slate-500"}`}>
                      {processingState > 1 ? "✓" : "1"}
@@ -195,7 +195,7 @@ import { useState } from "react";
          )}
  
          {/* Quick Sample Presets Loader */}
-         <div className="bg-[#F3EFEA] border border-[#E5DFD5] rounded-xl p-4 space-y-2.5">
+         <div className="bg-[#F3EFEA] border border-[#E5DFD5] rounded-sm p-4 space-y-2.5">
            <div className="flex items-center justify-between">
              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#0B132B]">
                Quick Load Sample Procurement Specifications (SIH 26108)
@@ -211,7 +211,7 @@ import { useState } from "react";
                  key={p.id}
                  type="button"
                  onClick={() => handleSelectPreset(p)}
-                 className="text-xs px-3 py-1.5 rounded-lg bg-white hover:bg-slate-100 border border-[#E5DFD5] text-[#0B132B] font-medium transition-colors shadow-xs"
+                 className="text-xs px-3 py-1.5 rounded-sm bg-white hover:bg-slate-100 border border-[#E5DFD5] text-[#0B132B] font-medium transition-colors shadow-xs"
                  data-testid={`quick-sample-button-${p.id}`}
                >
                  {p.title.split(" &")[0]}
@@ -221,7 +221,7 @@ import { useState } from "react";
          </div>
  
          {/* Main Dual-Input Workspace */}
-         <div className="bg-white rounded-2xl border border-[#E5DFD5] shadow-sm p-6 sm:p-8 space-y-6">
+         <div className="bg-white rounded-sm border border-[#E5DFD5] shadow-sm p-6 sm:p-8 space-y-6">
            {/* Metadata Row */}
            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
              <div>
@@ -233,7 +233,7 @@ import { useState } from "react";
                  value={title}
                  onChange={(e) => setTitle(e.target.value)}
                  placeholder="e.g. LED Street Lighting Tender 2026"
-                 className="w-full text-xs p-2.5 rounded-lg border border-[#E5DFD5] bg-[#FAF8F5] focus:ring-1 focus:ring-[#B81D24] focus:outline-none"
+                 className="w-full text-xs p-2.5 rounded-sm border border-[#E5DFD5] bg-[#FAF8F5] focus:ring-1 focus:ring-[#B81D24] focus:outline-none"
                  data-testid="input-requirement-title"
                />
              </div>
@@ -247,7 +247,7 @@ import { useState } from "react";
                  value={department}
                  onChange={(e) => setDepartment(e.target.value)}
                  placeholder="e.g. CPWD, NHAI, Jal Jeevan"
-                 className="w-full text-xs p-2.5 rounded-lg border border-[#E5DFD5] bg-[#FAF8F5] focus:ring-1 focus:ring-[#B81D24] focus:outline-none"
+                 className="w-full text-xs p-2.5 rounded-sm border border-[#E5DFD5] bg-[#FAF8F5] focus:ring-1 focus:ring-[#B81D24] focus:outline-none"
                  data-testid="input-requirement-department"
                />
              </div>
@@ -259,7 +259,7 @@ import { useState } from "react";
                <select
                  value={sector}
                  onChange={(e) => setSector(e.target.value)}
-                 className="w-full text-xs p-2.5 rounded-lg border border-[#E5DFD5] bg-[#FAF8F5] focus:ring-1 focus:ring-[#B81D24] focus:outline-none"
+                 className="w-full text-xs p-2.5 rounded-sm border border-[#E5DFD5] bg-[#FAF8F5] focus:ring-1 focus:ring-[#B81D24] focus:outline-none"
                  data-testid="select-requirement-sector"
                >
                  <option value="Electrotechnical & Smart Infrastructure">Electrotechnical & Smart Infrastructure</option>
@@ -274,7 +274,7 @@ import { useState } from "react";
  
            {/* Dual Mode Tabs */}
            <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
-             <TabsList className="bg-[#FAF8F5] border border-[#E5DFD5] p-1 rounded-lg">
+             <TabsList className="bg-[#FAF8F5] border border-[#E5DFD5] p-1 rounded-sm">
                <TabsTrigger 
                  value="text" 
                  className="text-xs font-medium data-[state=active]:bg-[#0B132B] data-[state=active]:text-white"
@@ -301,14 +301,14 @@ import { useState } from "react";
                  onChange={(e) => setRequirementText(e.target.value)}
                  rows={10}
                  placeholder="Paste the technical specification, scope of work, bill of quantities (BOQ), or Notice Inviting Tender (NIT) paragraph here..."
-                 className="w-full p-4 text-xs font-mono text-slate-800 bg-[#FAF8F5] border border-[#E5DFD5] rounded-xl focus:outline-none focus:ring-1 focus:ring-[#B81D24] focus:border-[#B81D24] resize-y leading-relaxed"
+                 className="w-full p-4 text-xs font-mono text-slate-800 bg-[#FAF8F5] border border-[#E5DFD5] rounded-sm focus:outline-none focus:ring-1 focus:ring-[#B81D24] focus:border-[#B81D24] resize-y leading-relaxed"
                  data-testid="textarea-requirement-full-text"
                />
              </TabsContent>
  
              {/* Tab 2: PDF Upload Workspace */}
              <TabsContent value="upload" className="space-y-4 pt-2">
-               <div className="border-2 border-dashed border-[#E5DFD5] hover:border-[#B81D24] rounded-2xl p-8 text-center space-y-4 bg-[#FAF8F5]/50 transition-colors">
+               <div className="border-2 border-dashed border-[#E5DFD5] hover:border-[#B81D24] rounded-sm p-8 text-center space-y-4 bg-[#FAF8F5]/50 transition-colors">
                  <div className="w-12 h-12 rounded-full bg-white border border-[#E5DFD5] flex items-center justify-center mx-auto text-slate-600 shadow-xs">
                    <Upload className="w-6 h-6 text-[#B81D24]" />
                  </div>
@@ -344,7 +344,7 @@ import { useState } from "react";
                </div>
  
                {uploadedFileName && (
-                 <div className="p-4 bg-[#F3EFEA] border border-[#E5DFD5] rounded-xl flex items-center justify-between text-xs">
+                 <div className="p-4 bg-[#F3EFEA] border border-[#E5DFD5] rounded-sm flex items-center justify-between text-xs">
                    <div className="flex items-center gap-2 font-mono">
                      <FileCheck className="w-4 h-4 text-emerald-700" />
                      <span className="font-semibold text-[#0B132B]">{uploadedFileName}</span>
@@ -369,7 +369,7 @@ import { useState } from "react";
                    <span className="text-[11px] font-mono text-slate-500 uppercase">
                      Extracted Document Content Preview
                    </span>
-                   <div className="p-3 bg-[#FAF8F5] border border-[#E5DFD5] rounded-lg text-xs font-mono text-slate-700 max-h-36 overflow-y-auto whitespace-pre-wrap">
+                   <div className="p-3 bg-[#FAF8F5] border border-[#E5DFD5] rounded-sm text-xs font-mono text-slate-700 max-h-36 overflow-y-auto whitespace-pre-wrap">
                      {requirementText}
                    </div>
                  </div>

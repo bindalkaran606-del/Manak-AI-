@@ -21,7 +21,7 @@ export const ModelTransparencyModal: React.FC<ModelTransparencyModalProps> = ({
 }) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto bg-[#FAF8F5] border-[#E5DFD5] p-6 shadow-2xl">
+      <DialogContent className="w-[min(95vw,52rem)] sm:max-w-[52rem] max-h-[85vh] overflow-y-auto bg-[#FAF8F5] border-[#E5DFD5] p-6">
         <DialogHeader className="border-b border-[#E5DFD5] pb-4">
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded bg-[#B81D24] text-white flex items-center justify-center font-bold text-sm">
@@ -49,19 +49,19 @@ export const ModelTransparencyModal: React.FC<ModelTransparencyModalProps> = ({
               MANAK AI combines structured technical entity extraction with semantic similarity retrieval over the official Bureau of Indian Standards (BIS) knowledge base. The decision-support pipeline operates in 4 verified stages:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-              <div className="p-3 bg-white rounded-lg border border-[#E5DFD5]">
+              <div className="p-3 bg-white rounded-sm border border-[#E5DFD5]">
                 <span className="font-mono font-bold text-[#B81D24] block">Stage 1: Entity & Parameter Parsing</span>
                 <span className="text-[11px] text-slate-600">Extracts product classification, intended scope, operating environmental bounds, and numerical parameters (efficacy, pressure, yield stress).</span>
               </div>
-              <div className="p-3 bg-white rounded-lg border border-[#E5DFD5]">
+              <div className="p-3 bg-white rounded-sm border border-[#E5DFD5]">
                 <span className="font-mono font-bold text-[#0B132B] block">Stage 2: Hybrid Semantic Vector Search</span>
                 <span className="text-[11px] text-slate-600">Matches requirement embedding vectors against curated IS standard corpus with technical committee taxonomy cross-referencing.</span>
               </div>
-              <div className="p-3 bg-white rounded-lg border border-[#E5DFD5]">
+              <div className="p-3 bg-white rounded-sm border border-[#E5DFD5]">
                 <span className="font-mono font-bold text-[#0B132B] block">Stage 3: Clause-Level Evidence Alignment</span>
                 <span className="text-[11px] text-slate-600">Retrieves exact standard clauses, test methods, and tolerance thresholds to provide mathematical explainability for each recommendation.</span>
               </div>
-              <div className="p-3 bg-white rounded-lg border border-[#E5DFD5]">
+              <div className="p-3 bg-white rounded-sm border border-[#E5DFD5]">
                 <span className="font-mono font-bold text-[#E67E22] block">Stage 4: MANAK Insight & Gap Audit</span>
                 <span className="text-[11px] text-slate-600">Audits the tender specification against mandatory Quality Control Orders (QCO) and flags missing testing parameters before tender publication.</span>
               </div>
@@ -77,7 +77,7 @@ export const ModelTransparencyModal: React.FC<ModelTransparencyModalProps> = ({
             <p className="text-slate-600">
               The engine indexes standards across 14 BIS Division Councils, with high-density clause resolution in primary public procurement sectors:
             </p>
-            <div className="p-3.5 bg-[#F3EFEA] rounded-lg border border-[#E5DFD5] space-y-2">
+            <div className="p-3.5 bg-[#F3EFEA] rounded-sm border border-[#E5DFD5] space-y-2">
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 font-mono text-[11px]">
                 <div>• Electrotechnical (ETD)</div>
                 <div>• Civil Engineering (CED)</div>
@@ -104,7 +104,7 @@ export const ModelTransparencyModal: React.FC<ModelTransparencyModalProps> = ({
           </div>
 
           {/* Section 4: Human-in-the-Loop Principle */}
-          <div className="p-4 bg-amber-50/70 border border-amber-200 rounded-lg space-y-1.5">
+          <div className="p-4 bg-amber-50/70 border border-amber-200 rounded-sm space-y-1.5">
             <div className="flex items-center gap-2 font-semibold text-amber-900">
               <AlertCircle className="w-4 h-4 text-amber-700" />
               <span>Human-in-the-Loop Decision Support Mandate</span>

@@ -83,7 +83,7 @@ export default function History() {
         </div>
 
         {/* Filter & Search Bar */}
-        <div className="bg-white rounded-2xl border border-[#E5DFD5] p-4 flex flex-col sm:flex-row items-center gap-3">
+        <div className="bg-white rounded-sm border border-[#E5DFD5] p-4 flex flex-col sm:flex-row items-center gap-3">
           <div className="relative flex-1 w-full">
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
             <input
@@ -91,7 +91,7 @@ export default function History() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Filter by requirement title, BIS department, or sector..."
-              className="w-full pl-10 pr-4 py-2 text-xs rounded-xl border border-[#E5DFD5] bg-[#FAF8F5] focus:ring-1 focus:ring-[#B81D24] focus:outline-none text-slate-800"
+              className="w-full pl-10 pr-4 py-2 text-xs rounded-sm border border-[#E5DFD5] bg-[#FAF8F5] focus:ring-1 focus:ring-[#B81D24] focus:outline-none text-slate-800"
               data-testid="history-search-input"
             />
           </div>
@@ -100,7 +100,7 @@ export default function History() {
             <select
               value={selectedSector}
               onChange={(e) => setSelectedSector(e.target.value)}
-              className="w-full sm:w-auto text-xs py-2 px-3 rounded-xl border border-[#E5DFD5] bg-[#FAF8F5] focus:ring-1 focus:ring-[#B81D24] focus:outline-none text-slate-700 font-mono"
+              className="w-full sm:w-auto text-xs py-2 px-3 rounded-sm border border-[#E5DFD5] bg-[#FAF8F5] focus:ring-1 focus:ring-[#B81D24] focus:outline-none text-slate-700 font-mono"
             >
               <option value="All">All Sectors</option>
               <option value="Electrotechnical">Electrotechnical</option>
@@ -122,7 +122,7 @@ export default function History() {
               <div
                 key={item.id}
                 onClick={() => navigate(`/analysis/${item.id}`)}
-                className="p-5 bg-white hover:bg-[#FAF8F5] border border-[#E5DFD5] hover:border-slate-400 rounded-2xl transition-all duration-200 cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-4 group shadow-xs"
+                className="p-5 bg-white hover:bg-[#FAF8F5] border border-[#E5DFD5] hover:border-slate-400 rounded-sm transition-all duration-200 cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-4 group shadow-xs"
                 data-testid={`history-row-${item.id}`}
               >
                 <div className="space-y-1.5 flex-1">
@@ -177,7 +177,7 @@ export default function History() {
               </div>
             ))
           ) : (
-            <div className="p-12 text-center bg-white rounded-2xl border border-[#E5DFD5] space-y-3">
+            <div className="p-12 text-center bg-white rounded-sm border border-[#E5DFD5] space-y-3">
               <FileText className="w-8 h-8 text-slate-400 mx-auto" />
               <h4 className="text-sm font-semibold text-[#0B132B]">No procurement analyses found</h4>
               <p className="text-xs text-slate-500">

@@ -129,7 +129,7 @@ export default function Landing() {
           </div>
 
           {/* Quick Interactive Requirement Box on Landing */}
-          <div className="mt-14 max-w-3xl mx-auto bg-white rounded-2xl border border-[#E5DFD5] shadow-lg p-4 sm:p-6 transition-all duration-300">
+          <div className="mt-14 max-w-3xl mx-auto bg-white rounded-sm border border-[#E5DFD5] shadow-lg p-4 sm:p-6 transition-all duration-300">
             <div className="flex items-center justify-between pb-3 border-b border-[#E5DFD5]">
               <div className="flex items-center gap-2">
                 <div className="w-2.5 h-2.5 rounded-full bg-[#B81D24]" />
@@ -147,7 +147,7 @@ export default function Landing() {
                 value={quickInput}
                 onChange={(e) => setQuickInput(e.target.value)}
                 placeholder="Describe what you are procuring (e.g., 'Supply of 70W and 120W outdoor LED street lighting luminaires with IP66 optical compartment, CCT 5000K, and 10kV surge protection...')"
-                className="w-full h-24 p-3.5 text-xs text-slate-800 bg-[#FAF8F5] border border-[#E5DFD5] rounded-xl focus:outline-none focus:ring-1 focus:ring-[#B81D24] focus:border-[#B81D24] resize-none leading-relaxed"
+                className="w-full h-24 p-3.5 text-xs text-slate-800 bg-[#FAF8F5] border border-[#E5DFD5] rounded-sm focus:outline-none focus:ring-1 focus:ring-[#B81D24] focus:border-[#B81D24] resize-none leading-relaxed"
                 data-testid="landing-quick-input-textarea"
               />
 
@@ -158,7 +158,7 @@ export default function Landing() {
                   <button
                     key={p.id}
                     onClick={() => handleSelectPreset(p.sample_text, p.title)}
-                    className="text-[11px] px-2.5 py-1 rounded-md bg-[#F3EFEA] hover:bg-[#E5DFD5] text-[#0B132B] font-medium transition-colors border border-[#E5DFD5] flex items-center gap-1"
+                    className="text-[11px] px-2.5 py-1 rounded-sm bg-[#F3EFEA] hover:bg-[#E5DFD5] text-[#0B132B] font-medium transition-colors border border-[#E5DFD5] flex items-center gap-1"
                     data-testid={`landing-preset-${p.id}`}
                   >
                     <span>{p.title.split(" &")[0]}</span>
@@ -247,7 +247,7 @@ export default function Landing() {
             {/* Step 1 */}
             <Card className="bg-white border-[#E5DFD5] shadow-sm hover:shadow-md transition-shadow">
               <CardContent className="p-6 space-y-3">
-                <div className="w-10 h-10 rounded-lg bg-[#FAF8F5] border border-[#E5DFD5] flex items-center justify-center font-mono font-bold text-sm text-[#0B132B]">
+                <div className="w-10 h-10 rounded-sm bg-[#FAF8F5] border border-[#E5DFD5] flex items-center justify-center font-mono font-bold text-sm text-[#0B132B]">
                   01
                 </div>
                 <h3 className="text-base font-bold text-[#0B132B]">Requirement Ingestion</h3>
@@ -260,7 +260,7 @@ export default function Landing() {
             {/* Step 2 */}
             <Card className="bg-white border-[#E5DFD5] shadow-sm hover:shadow-md transition-shadow">
               <CardContent className="p-6 space-y-3">
-                <div className="w-10 h-10 rounded-lg bg-[#FAF8F5] border border-[#E5DFD5] flex items-center justify-center font-mono font-bold text-sm text-[#0B132B]">
+                <div className="w-10 h-10 rounded-sm bg-[#FAF8F5] border border-[#E5DFD5] flex items-center justify-center font-mono font-bold text-sm text-[#0B132B]">
                   02
                 </div>
                 <h3 className="text-base font-bold text-[#0B132B]">Entity & Parameter Parsing</h3>
@@ -273,7 +273,7 @@ export default function Landing() {
             {/* Step 3 */}
             <Card className="bg-white border-[#E5DFD5] shadow-sm hover:shadow-md transition-shadow">
               <CardContent className="p-6 space-y-3">
-                <div className="w-10 h-10 rounded-lg bg-[#FAF8F5] border border-[#E5DFD5] flex items-center justify-center font-mono font-bold text-sm text-[#B81D24]">
+                <div className="w-10 h-10 rounded-sm bg-[#FAF8F5] border border-[#E5DFD5] flex items-center justify-center font-mono font-bold text-sm text-[#B81D24]">
                   03
                 </div>
                 <h3 className="text-base font-bold text-[#0B132B]">IS Ranking & Evidence</h3>
@@ -286,7 +286,7 @@ export default function Landing() {
             {/* Step 4 */}
             <Card className="bg-white border-[#E5DFD5] shadow-sm hover:shadow-md transition-shadow">
               <CardContent className="p-6 space-y-3">
-                <div className="w-10 h-10 rounded-lg bg-[#FAF8F5] border border-[#E5DFD5] flex items-center justify-center font-mono font-bold text-sm text-emerald-800">
+                <div className="w-10 h-10 rounded-sm bg-[#FAF8F5] border border-[#E5DFD5] flex items-center justify-center font-mono font-bold text-sm text-emerald-800">
                   04
                 </div>
                 <h3 className="text-base font-bold text-[#0B132B]">MANAK Insight & Gaps</h3>
@@ -321,7 +321,7 @@ export default function Landing() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Sector 1 */}
-            <div className="p-5 rounded-xl bg-[#FAF8F5] border border-[#E5DFD5] space-y-2">
+            <div className="p-5 rounded-sm bg-[#FAF8F5] border border-[#E5DFD5] space-y-2">
               <span className="text-xs font-mono font-semibold text-[#B81D24]">ELECTROTECHNICAL (ETD)</span>
               <h4 className="font-bold text-[#0B132B] text-sm">Lighting, Drivers & Energy Equipment</h4>
               <p className="text-xs text-slate-600">
@@ -333,7 +333,7 @@ export default function Landing() {
             </div>
 
             {/* Sector 2 */}
-            <div className="p-5 rounded-xl bg-[#FAF8F5] border border-[#E5DFD5] space-y-2">
+            <div className="p-5 rounded-sm bg-[#FAF8F5] border border-[#E5DFD5] space-y-2">
               <span className="text-xs font-mono font-semibold text-[#0B132B]">CIVIL ENGINEERING (CED)</span>
               <h4 className="font-bold text-[#0B132B] text-sm">Steel, Cement & Highway Infrastructure</h4>
               <p className="text-xs text-slate-600">
@@ -345,7 +345,7 @@ export default function Landing() {
             </div>
 
             {/* Sector 3 */}
-            <div className="p-5 rounded-xl bg-[#FAF8F5] border border-[#E5DFD5] space-y-2">
+            <div className="p-5 rounded-sm bg-[#FAF8F5] border border-[#E5DFD5] space-y-2">
               <span className="text-xs font-mono font-semibold text-emerald-800">WATER & UTILITIES (CED 50)</span>
               <h4 className="font-bold text-[#0B132B] text-sm">Pipes & Public Drinking Water Supply</h4>
               <p className="text-xs text-slate-600">

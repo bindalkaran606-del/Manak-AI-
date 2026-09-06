@@ -84,7 +84,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Col 4: Human-in-the-Loop Oversight Principle */}
-          <div className="space-y-2 bg-[#F3EFEA] p-3.5 rounded-lg border border-[#E5DFD5]">
+          <div className="space-y-2 bg-[#F3EFEA] p-3.5 rounded-sm border border-[#E5DFD5]">
             <div className="flex items-center gap-1.5 text-[#0B132B] font-semibold text-xs">
               <ShieldCheck className="w-4 h-4 text-[#B81D24]" />
               <span>Human Decision-Maker Mandate</span>

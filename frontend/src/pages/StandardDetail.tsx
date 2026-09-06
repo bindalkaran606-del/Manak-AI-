@@ -43,7 +43,7 @@ export default function StandardDetail() {
       <div className="min-h-screen bg-[#FAF8F5] flex flex-col font-sans">
         <Header />
         <div className="flex-1 max-w-4xl mx-auto w-full px-4 py-20 text-center space-y-4">
-          <div className="w-10 h-10 rounded-xl bg-[#B81D24] text-white flex items-center justify-center font-bold text-lg mx-auto animate-pulse">
+          <div className="w-10 h-10 rounded-sm bg-[#B81D24] text-white flex items-center justify-center font-bold text-lg mx-auto animate-pulse">
             म
           </div>
           <h2 className="text-lg font-bold text-[#0B132B]">Loading Indian Standard Specifications...</h2>
@@ -108,7 +108,7 @@ export default function StandardDetail() {
 
       <main className="flex-1 max-w-5xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 space-y-8">
         {/* Authoritative Standard Header Card */}
-        <section className="bg-white rounded-2xl border border-[#E5DFD5] shadow-sm p-6 sm:p-8 space-y-6 guilloche-watermark">
+        <section className="bg-white rounded-sm border border-[#E5DFD5] shadow-sm p-6 sm:p-8 space-y-6 guilloche-watermark">
           <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-3">
               <span className="font-mono text-xl sm:text-2xl font-bold text-[#B81D24]" data-testid="standard-detail-code">
@@ -127,7 +127,7 @@ export default function StandardDetail() {
           </div>
 
           {/* Institutional Metadata Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-[#FAF8F5] rounded-xl border border-[#E5DFD5] text-xs">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-[#FAF8F5] rounded-sm border border-[#E5DFD5] text-xs">
             <div>
               <span className="text-slate-500 block text-[10px] font-mono uppercase">Category</span>
               <span className="font-semibold text-[#0B132B]">{standard.category}</span>
@@ -150,9 +150,9 @@ export default function StandardDetail() {
         </section>
 
         {/* Structured Tabs Content */}
-        <section className="bg-white rounded-2xl border border-[#E5DFD5] shadow-sm p-6 sm:p-8 space-y-6">
+        <section className="bg-white rounded-sm border border-[#E5DFD5] shadow-sm p-6 sm:p-8 space-y-6">
           <Tabs defaultValue="scope" className="space-y-6">
-            <TabsList className="bg-[#FAF8F5] border border-[#E5DFD5] p-1 rounded-lg">
+            <TabsList className="bg-[#FAF8F5] border border-[#E5DFD5] p-1 rounded-sm">
               <TabsTrigger 
                 value="scope" 
                 className="text-xs font-medium data-[state=active]:bg-[#0B132B] data-[state=active]:text-white"
@@ -196,7 +196,7 @@ export default function StandardDetail() {
                 <h3 className="font-mono font-bold uppercase text-[#0B132B] text-xs">
                   Official Scope Summary
                 </h3>
-                <p className="text-slate-700 leading-relaxed text-sm bg-[#FAF8F5] p-4 rounded-xl border border-[#E5DFD5]">
+                <p className="text-slate-700 leading-relaxed text-sm bg-[#FAF8F5] p-4 rounded-sm border border-[#E5DFD5]">
                   {standard.scope}
                 </p>
               </div>
@@ -220,7 +220,7 @@ export default function StandardDetail() {
               </h3>
               <div className="space-y-3">
                 {standard.key_clauses?.map((c, i) => (
-                  <div key={i} className="p-4 bg-[#FAF8F5] rounded-xl border border-[#E5DFD5] space-y-2 text-xs">
+                  <div key={i} className="p-4 bg-[#FAF8F5] rounded-sm border border-[#E5DFD5] space-y-2 text-xs">
                     <div className="flex items-center justify-between">
                       <span className="font-mono font-bold text-[#B81D24] text-sm">
                         {c.clause_no}: {c.clause_title}
@@ -262,7 +262,7 @@ export default function StandardDetail() {
               <h3 className="font-mono font-bold uppercase text-[#0B132B] text-xs">
                 Mandatory Test Methods & Conformity Assessment
               </h3>
-              <div className="border border-[#E5DFD5] rounded-xl overflow-hidden">
+              <div className="border border-[#E5DFD5] rounded-sm overflow-hidden">
                 <table className="w-full text-left text-xs">
                   <thead className="bg-[#FAF8F5] text-slate-700 text-[11px] font-mono border-b border-[#E5DFD5]">
                     <tr>
@@ -298,7 +298,7 @@ export default function StandardDetail() {
               <div className="space-y-3">
                 {standard.amendments && standard.amendments.length > 0 ? (
                   standard.amendments.map((a, i) => (
-                    <div key={i} className="p-4 bg-[#FAF8F5] rounded-xl border border-[#E5DFD5] space-y-1 text-xs">
+                    <div key={i} className="p-4 bg-[#FAF8F5] rounded-sm border border-[#E5DFD5] space-y-1 text-xs">
                       <div className="flex items-center justify-between font-mono">
                         <span className="font-bold text-[#0B132B]">{a.amendment_no}</span>
                         <span className="text-slate-500">Notified: {a.date}</span>
@@ -307,7 +307,7 @@ export default function StandardDetail() {
                     </div>
                   ))
                 ) : (
-                  <div className="p-6 bg-[#FAF8F5] rounded-xl border border-[#E5DFD5] text-xs text-slate-600 text-center">
+                  <div className="p-6 bg-[#FAF8F5] rounded-sm border border-[#E5DFD5] text-xs text-slate-600 text-center">
                     No active revision amendments pending. Standard is reaffirmed and current in the official BIS gazette.
                   </div>
                 )}
@@ -324,7 +324,7 @@ export default function StandardDetail() {
                   <div
                     key={i}
                     onClick={() => navigate(`/standards/${encodeURIComponent(r.code)}`)}
-                    className="p-4 bg-[#FAF8F5] hover:bg-white border border-[#E5DFD5] hover:border-[#B81D24] rounded-xl cursor-pointer transition-all space-y-1 text-xs group"
+                    className="p-4 bg-[#FAF8F5] hover:bg-white border border-[#E5DFD5] hover:border-[#B81D24] rounded-sm cursor-pointer transition-all space-y-1 text-xs group"
                   >
                     <div className="flex items-center justify-between font-mono">
                       <span className="font-bold text-[#B81D24] group-hover:underline">{r.code}</span>

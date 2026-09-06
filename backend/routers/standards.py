@@ -1,5 +1,6 @@
 from fastapi import APIRouter, HTTPException, Query
 from typing import List, Optional
+import re
 import urllib.parse
 from lib.db import db
 from models.standards import IndianStandard, StandardsQueryResponse
@@ -25,21 +26,27 @@ async def list_standards(
         query["qco_mandatory"] = True
 
     if search and search.strip():
-        term = search.strip()
+        term = re.escape(search.strip())
+        # Normalise "IS10322" / "is 10322" style queries against stored codes
+        loose_code = term.replace(r"\ ", r"\s*")
         query["$or"] = [
-            {"code": {"$regex": term, "$options": "i"}},
+            {"code": {"$regex": loose_code, "$options": "i"}},
             {"title": {"$regex": term, "$options": "i"}},
             {"keywords": {"$regex": term, "$options": "i"}},
             {"technical_committee": {"$regex": term, "$options": "i"}},
+            {"ics_code": {"$regex": term, "$options": "i"}},
+            {"scope": {"$regex": term, "$options": "i"}},
         ]
 
-    cursor = db.standards.find(query, {"_id": 0}).skip(skip).limit(limit)
+    cursor = db.standards.find(query, {"_id": 0}).sort("code", 1).skip(skip).limit(limit)
     standards_list = await cursor.to_list(limit)
     total_count = await db.standards.count_documents(query)
+    categories = sorted(await db.standards.distinct("category"))
 
     return StandardsQueryResponse(
         standards=[IndianStandard(**std) for std in standards_list],
         total_count=total_count,
+        categories=categories,
     )
 
 

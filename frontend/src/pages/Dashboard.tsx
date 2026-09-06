@@ -81,12 +81,12 @@ export default function Dashboard() {
           </div>
 
           {/* Large Elegant Intake Box */}
-          <div className="bg-white rounded-2xl border border-[#E5DFD5] shadow-sm p-5 sm:p-7 space-y-4 relative guilloche-watermark transition-all duration-200 hover:border-slate-400">
+          <div className="bg-white rounded-sm border border-[#E5DFD5] shadow-sm p-5 sm:p-7 space-y-4 relative guilloche-watermark transition-all duration-200 hover:border-slate-400">
             <textarea
               value={requirementText}
               onChange={(e) => setRequirementText(e.target.value)}
               placeholder="Describe your procurement requirement (e.g. 'Supply of outdoor LED Street Lighting luminaires with IP66 optical compartment and 10kV surge protection...')"
-              className="w-full h-32 p-4 text-sm text-slate-800 bg-[#FAF8F5] border border-[#E5DFD5] rounded-xl focus:outline-none focus:ring-1 focus:ring-[#B81D24] focus:border-[#B81D24] resize-none leading-relaxed"
+              className="w-full h-32 p-4 text-sm text-slate-800 bg-[#FAF8F5] border border-[#E5DFD5] rounded-sm focus:outline-none focus:ring-1 focus:ring-[#B81D24] focus:border-[#B81D24] resize-none leading-relaxed"
               data-testid="dashboard-requirement-textarea"
             />
 
@@ -135,7 +135,7 @@ export default function Dashboard() {
               <button
                 key={preset.id}
                 onClick={() => handleSelectPreset(preset)}
-                className="text-left p-4 bg-white hover:bg-[#FAF8F5] border border-[#E5DFD5] hover:border-[#B81D24] rounded-xl transition-all duration-200 group flex flex-col justify-between shadow-xs"
+                className="text-left p-4 bg-white hover:bg-[#FAF8F5] border border-[#E5DFD5] hover:border-[#B81D24] rounded-sm transition-all duration-200 group flex flex-col justify-between shadow-xs"
                 data-testid={`preset-card-${preset.id}`}
               >
                 <div className="space-y-1.5">
@@ -186,7 +186,7 @@ export default function Dashboard() {
                 <div
                   key={item.id}
                   onClick={() => navigate(`/analysis/${item.id}`)}
-                  className="p-4 bg-white hover:bg-[#FAF8F5] border border-[#E5DFD5] hover:border-slate-400 rounded-xl transition-all duration-200 cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs"
+                  className="p-4 bg-white hover:bg-[#FAF8F5] border border-[#E5DFD5] hover:border-slate-400 rounded-sm transition-all duration-200 cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs"
                   data-testid={`recent-analysis-row-${item.id}`}
                 >
                   <div className="space-y-1">
@@ -226,7 +226,7 @@ export default function Dashboard() {
                 </div>
               ))
             ) : (
-              <div className="p-8 text-center bg-white rounded-xl border border-[#E5DFD5] space-y-3">
+              <div className="p-8 text-center bg-white rounded-sm border border-[#E5DFD5] space-y-3">
                 <FileText className="w-8 h-8 text-slate-400 mx-auto" />
                 <h4 className="text-sm font-semibold text-[#0B132B]">No analyses yet</h4>
                 <p className="text-xs text-slate-500 max-w-sm mx-auto">
@@ -238,7 +238,7 @@ export default function Dashboard() {
         </section>
 
         {/* Bottom Metrics Bar */}
-        <section className="p-5 bg-white rounded-xl border border-[#E5DFD5] grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+        <section className="p-5 bg-white rounded-sm border border-[#E5DFD5] grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
           <div>
             <span className="text-[10px] font-mono uppercase text-slate-500 block">Requirements Analysed</span>
             <span className="font-mono text-lg font-bold text-[#0B132B]" data-testid="dashboard-stat-analyses">

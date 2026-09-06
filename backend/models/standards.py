@@ -54,3 +54,4 @@ class IndianStandard(BaseModel):
 class StandardsQueryResponse(BaseModel):
     standards: List[IndianStandard]
     total_count: int
+    categories: List[str] = Field(default_factory=list)

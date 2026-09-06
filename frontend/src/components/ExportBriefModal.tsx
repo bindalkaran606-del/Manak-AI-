@@ -58,19 +58,36 @@ All bidders must furnish valid BIS Certification License (ISI Mark / CRS Registr
   };
 
   const handlePrint = () => {
+    document.body.classList.add("printing-annexure");
+    const cleanup = () => {
+      document.body.classList.remove("printing-annexure");
+      window.removeEventListener("afterprint", cleanup);
+    };
+    window.addEventListener("afterprint", cleanup);
     window.print();
+    // Safari/Chrome fallback if afterprint never fires
+    setTimeout(cleanup, 4000);
   };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-[#FAF8F5] border-[#E5DFD5] p-0 shadow-2xl">
-        {/* Printable Official Document Wrapper */}
-        <div className="p-6 sm:p-10 space-y-8 bg-white relative guilloche-watermark">
+      <DialogContent className="w-[min(95vw,64rem)] sm:max-w-[64rem] max-h-[90vh] overflow-y-auto bg-[#FAF8F5] border-[#E5DFD5] p-0">
+        {/* Printable Official Document Wrapper — A4 annexure sheet */}
+        <div
+          id="print-root"
+          className="p-6 sm:p-10 space-y-8 bg-white relative guilloche-watermark"
+          data-testid="tender-annexure-print-root"
+        >
           {/* Document Official Header */}
           <div className="border-b-2 border-[#0B132B] pb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded bg-[#B81D24] text-white flex items-center justify-center font-black text-xl shadow-sm">
-                मानक
+            <div className="flex items-start gap-4">
+              <div className="border-l-[3px] border-[#B81D24] pl-3 pt-0.5">
+                <span className="block text-lg font-bold text-[#0B132B] leading-none">
+                  MANAK <span className="text-[#B81D24]">AI</span>
+                </span>
+                <span className="block text-[9px] font-mono uppercase tracking-wider text-slate-500 mt-1">
+                  Annexure
+                </span>
               </div>
               <div>
                 <h2 className="text-lg font-bold text-[#0B132B] tracking-tight">
@@ -88,7 +105,7 @@ All bidders must furnish valid BIS Certification License (ISI Mark / CRS Registr
           </div>
 
           {/* Legal Compliance Banner */}
-          <div className="bg-[#F3EFEA] border border-[#E5DFD5] p-4 rounded-lg text-xs space-y-1">
+          <div className="bg-[#F3EFEA] border border-[#E5DFD5] p-4  text-xs space-y-1">
             <div className="flex items-center gap-2 font-semibold text-[#0B132B]">
               <ShieldCheck className="w-4 h-4 text-[#B81D24]" />
               <span>General Financial Rules (GFR) 2017 — Rule 144 Statutory Notice</span>
@@ -99,7 +116,7 @@ All bidders must furnish valid BIS Certification License (ISI Mark / CRS Registr
           </div>
 
           {/* Procurement Metadata Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-[#FAF8F5] rounded-lg border border-[#E5DFD5] text-xs">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-[#FAF8F5]  border border-[#E5DFD5] text-xs">
             <div>
               <span className="text-slate-500 block text-[10px] font-mono uppercase">Procurement Title</span>
               <span className="font-semibold text-[#0B132B]">{analysis.title}</span>
@@ -123,7 +140,7 @@ All bidders must furnish valid BIS Certification License (ISI Mark / CRS Registr
             <h3 className="text-sm font-bold text-[#0B132B] uppercase tracking-wider font-mono border-b border-[#E5DFD5] pb-1">
               1. Applicable Indian Standards (IS Code & Scope)
             </h3>
-            <div className="border border-[#E5DFD5] rounded-lg overflow-hidden">
+            <div className="border border-[#E5DFD5]  overflow-hidden">
               <table className="w-full text-left text-xs">
                 <thead className="bg-[#0B132B] text-white text-[11px] font-mono">
                   <tr>
@@ -140,7 +157,7 @@ All bidders must furnish valid BIS Certification License (ISI Mark / CRS Registr
                       <td className="p-2.5 font-mono font-bold text-[#B81D24]">{rec.standard_code}</td>
                       <td className="p-2.5 font-medium text-slate-800">{rec.standard_title}</td>
                       <td className="p-2.5">
-                        <span className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-emerald-50 text-emerald-800 border border-emerald-200">
+                        <span className="px-1.5 py-0.5 text-[10px] font-mono bg-emerald-50 text-emerald-800 border border-emerald-200">
                           {rec.status.toUpperCase()}
                         </span>
                       </td>
@@ -166,7 +183,7 @@ All bidders must furnish valid BIS Certification License (ISI Mark / CRS Registr
             </h3>
             <div className="space-y-3 text-xs">
               {analysis.recommendations.map((rec, i) => (
-                <div key={i} className="p-3 bg-[#FAF8F5] rounded border border-[#E5DFD5] space-y-2">
+                <div key={i} className="p-3 bg-[#FAF8F5] border border-[#E5DFD5] space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="font-mono font-bold text-[#0B132B]">{rec.standard_code}</span>
                     <span className="text-[11px] text-slate-500">{rec.why_recommended}</span>
@@ -189,24 +206,49 @@ All bidders must furnish valid BIS Certification License (ISI Mark / CRS Registr
             <h3 className="text-sm font-bold text-[#0B132B] uppercase tracking-wider font-mono border-b border-[#E5DFD5] pb-1">
               3. Recommended NIT Tender Specification Clauses
             </h3>
-            <pre className="p-4 bg-[#0B132B] text-slate-200 text-xs font-mono rounded-lg overflow-x-auto whitespace-pre-wrap leading-relaxed border border-slate-800">
+            <pre className="p-4 bg-[#0B132B] text-slate-200 text-xs font-mono  overflow-x-auto whitespace-pre-wrap leading-relaxed border border-slate-800">
               {analysis.gap_analysis.recommended_spec_amendment}
             </pre>
           </div>
 
-          {/* Official Sign-off Footer */}
-          <div className="pt-6 border-t border-[#E5DFD5] grid grid-cols-2 gap-8 text-[11px] text-slate-500 font-mono">
-            <div>
-              <p className="font-semibold text-[#0B132B]">Prepared By:</p>
-              <p>MANAK AI Decision Support System</p>
-              <p>Problem SIH 26108 · Smart India Hackathon 2026</p>
+          {/* Official Sign-off / Signature Block */}
+          <section className="pt-6 border-t-2 border-[#0B132B] space-y-4 avoid-break" data-testid="annexure-signature-block">
+            <h3 className="text-sm font-bold text-[#0B132B] uppercase tracking-wider font-mono">
+              4. Certification and Signatures
+            </h3>
+            <p className="text-[11px] text-slate-600 leading-relaxed">
+              This annexure has been generated as a decision-support aid. The applicability of each Indian Standard
+              listed above shall be confirmed by the procuring authority before incorporation into the Notice Inviting
+              Tender. Human review is mandatory; MANAK AI does not certify conformity.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2 text-[11px] font-mono text-slate-600">
+              {[
+                { role: "Prepared by", note: "Technical Assistant / Dealing Officer" },
+                { role: "Checked by", note: "Executive Engineer / Technical Cell" },
+                { role: "Approved by", note: "Competent Purchase Authority" },
+              ].map((sig) => (
+                <div key={sig.role} className="space-y-1 avoid-break">
+                  <div className="h-14 border-b border-slate-500" />
+                  <p className="font-semibold text-[#0B132B] pt-1">{sig.role}</p>
+                  <p>{sig.note}</p>
+                  <p className="pt-2">Name: ______________________</p>
+                  <p>Designation: ________________</p>
+                  <p>Date: _______________________</p>
+                </div>
+              ))}
             </div>
-            <div className="text-right">
-              <p className="font-semibold text-[#0B132B]">Verified & Approved By:</p>
-              <div className="h-10 border-b border-dashed border-slate-400 mt-2" />
-              <p className="mt-1">Authorized Procurement Officer Signature</p>
+
+            <div className="flex items-end justify-between pt-4 text-[10px] font-mono text-slate-500">
+              <div className="space-y-0.5">
+                <p>Generated by MANAK AI · Reference MANAK-IS-{analysis.id.slice(0, 8).toUpperCase()}</p>
+                <p>Standards metadata sourced from the Bureau of Indian Standards (bis.gov.in) — curated subset.</p>
+              </div>
+              <div className="w-24 h-24 border border-dashed border-slate-400 flex items-center justify-center text-center leading-tight px-2">
+                Office seal
+              </div>
             </div>
-          </div>
+          </section>
         </div>
 
         {/* Modal Actions */}

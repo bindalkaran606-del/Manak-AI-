@@ -53,3 +53,9 @@
   - `/api/stats` returns live DB counts only (no floor values, no invented precision/"gaps prevented" figures).
   - Footer carries an explicit BIS (bis.gov.in) sourcing + curated-subset disclaimer.
 - Typography: switched from Plus Jakarta Sans / JetBrains Mono to **Lato** (the typeface used on bis.gov.in) for all UI text and headings, with **IBM Plex Mono** for institutional metadata labels. Loaded via @fontsource/lato + @fontsource/ibm-plex-mono in index.css; heading tracking relaxed to -0.005em.
+
+## Update — catalogue search, A4 print, corpus, UI restyle
+- Search: `/api/standards?search=` now matches code (whitespace-tolerant), title, keywords, sectional committee, **ICS code** and scope; response carries a `categories` facet list. Catalogue page has 220 ms debounced search, dynamic division chips, status dropdown, QCO-only toggle, result summary and reset.
+- Corpus: 21 Indian Standards (was 11). New BIS-sourced entries in `backend/seed_extra.py` — Water & Utilities (IS 10500, IS 7634 Pt 2, IS 8329), Electrotechnical (IS 694, IS 732, IS 3043, IS 2026 Pt 1), Safety & Fire (IS 15683, IS 15298 Pt 2, IS 3521 Pt 2).
+- Print: `@page A4` + `body.printing-annexure` scoping prints only `#print-root` (the tender annexure) with page-break rules and a three-column signature block (Prepared / Checked / Approved) plus office-seal box. Triggered from Export Tender Appendix → Print / Save as PDF.
+- UI: headings now **Source Serif 4** (Lato retained for body, IBM Plex Mono for metadata); global corner radius reduced to ~3 px (all rounded-* utilities collapsed to rounded-sm); dialogs restyled as document sheets (square edges, no blur overlay, full-width 64rem / 52rem).

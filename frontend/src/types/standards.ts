@@ -49,6 +49,7 @@ export interface IndianStandard {
 export interface StandardsQueryResponse {
   standards: IndianStandard[];
   total_count: number;
+  categories: string[];
 }
 
 export interface TechnicalParameter {

@@ -1,0 +1,211 @@
+{
+  "project_name": "MANAK AI",
+  "sih_problem_statement": "SIH 26108 - AI-Powered Recommendation Engine for Identifying Applicable Indian Standards (IS Standards) for Procurement Specifications",
+  "design_philosophy": {
+    "core_aesthetic": "Apple Design Discipline + BIS Institutional Authority + Subtle Modern Indian Identity",
+    "tone": "Trustworthy, Institutional, Mathematical, Human-designed, High-Precision",
+    "archetype": "ARCHETYPE 4: SWISS & HIGH-CONTRAST + ARCHETYPE 5: LUXURY INSTITUTIONAL",
+    "principles": [
+      "Fusion over Imitation: Marry Apple's ultra-refined spacing and typography hierarchy with official Bureau of Indian Standards (BIS) government mandate clarity.",
+      "Guilloche Integrity: Utilize subtle security/guilloche watermark patterns to evoke sovereign authenticity, standard certification, and document security.",
+      "Clear Status System: Standard status indicators must be unmistakable (🟢 Current, 🟡 Under Revision, 🔴 Withdrawn/Superseded).",
+      "Explainable AI: Every IS standard recommendation MUST feature evidence-backed reasoning, clause references, parameter mapping, and score breakdown."
+    ]
+  },
+  "color_system": {
+    "primary_bis_red": {
+      "main": "#B81D24",
+      "hover": "#991319",
+      "light_bg": "#FDF2F2",
+      "border": "#F5C2C4",
+      "usage": "Primary CTAs, Brand identity accents, BIS emblem framing, key metric highlights"
+    },
+    "secondary_deep_navy": {
+      "main": "#0B132B",
+      "surface": "#1C2541",
+      "card_dark": "#111827",
+      "subtext": "#475569",
+      "usage": "Headers, primary typography, technical data tables, status badges, structural borders"
+    },
+    "accent_saffron": {
+      "main": "#E67E22",
+      "light": "#FFF5EB",
+      "border": "#FCD34D",
+      "usage": "Use VERY SPARINGLY — High priority alerts, AI gap analysis callouts, critical clause tags"
+    },
+    "base_warm_off_white": {
+      "background": "#FAF8F5",
+      "card_bg": "#FFFFFF",
+      "surface_muted": "#F3EFEA",
+      "border": "#E5DFD5",
+      "usage": "Main app background, structural canvas, clean reading surfaces"
+    },
+    "status_colors": {
+      "current_active": {
+        "text": "#15803D",
+        "bg": "#DCFCE7",
+        "border": "#86EFAC"
+      },
+      "under_revision": {
+        "text": "#B45309",
+        "bg": "#FEF3C7",
+        "border": "#FDE68A"
+      },
+      "withdrawn_superseded": {
+        "text": "#B91C1C",
+        "bg": "#FEE2E2",
+        "border": "#FCA5A5"
+      }
+    }
+  },
+  "assets": {
+    "guilloche_background_url": "https://customer-assets-v7afamib.emergentagent.net/job_33a7441a-f661-491b-a316-d60f9bd5c27c/artifacts/6mhnsdda_download%20%2817%29.webp",
+    "bis_reference_url": "https://www.bis.gov.in/?lang=en"
+  },
+  "typography": {
+    "font_family_heading": "Cabinet Grotesk, Outfit, system-ui, sans-serif",
+    "font_family_body": "Inter, IBM Plex Sans, system-ui, sans-serif",
+    "font_family_mono": "JetBrains Mono, Source Code Pro, monospace",
+    "scale": {
+      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#0B132B]",
+      "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-[#0B132B]",
+      "h3_card": "text-xl sm:text-2xl font-semibold text-[#0B132B]",
+      "subtext": "text-base text-slate-600 leading-relaxed",
+      "mono_label": "text-xs font-mono uppercase tracking-widest text-slate-500"
+    }
+  },
+  "image_urls": [
+    {
+      "category": "industrial_inspection",
+      "url": "https://images.unsplash.com/photo-1632914146475-bfe6fa6b2a12?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHxfHxpbmRpYW4lMjBlbmdpbmVlcmluZyUyMGluZHVzdHJpYWwlMjBtYW51ZmFjdHVyaW5nJTIwc3RhbmRhcmRzJTIwaW5zcGVjdGlvbnxlbnwwfHx8fDE3ODg2ODE1MjN8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Engineer performing quality testing and calibration in manufacturing facility"
+    },
+    {
+      "category": "heavy_machinery_standards",
+      "url": "https://images.unsplash.com/photo-1764114908655-9a26d32750a0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBlbmdpbmVlcmluZyUyMGluZHVzdHJpYWwlMjBtYW51ZmFjdHVyaW5nJTIwc3RhbmRhcmRzJTIwaW5zcGVjdGlvbnxlbnwwfHx8fDE3ODg2ODE1MjN8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Factory workers operating high precision heavy machinery according to safety standards"
+    },
+    {
+      "category": "structural_building_inspection",
+      "url": "https://images.unsplash.com/photo-1748027869634-fc2e545cfb0c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwyfHxpbmRpYW4lMjBlbmdpbmVlcmluZyUyMGluZHVzdHJpYWwlMjBtYW51ZmFjdHVyaW5nJTIwc3RhbmRhcmRzJTIwaW5zcGVjdGlvbnxlbnwwfHx8fDE3ODg2ODE1MjN8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Construction engineer auditing structural specifications and safety compliance"
+    }
+  ],
+  "application_workflow_steps": [
+    {
+      "step_id": "landing",
+      "name": "Institutional Landing Page",
+      "components": [
+        "Header Navigation with BIS Manak Logo, Bureau credentials, and Nav links",
+        "Hero Section with Guilloche pattern overlay, live stats ticker (e.g., 22,000+ Active IS Standards indexed, 99.4% Extraction Precision)",
+        "Quick Procurement Specification Analyzer Demo Input",
+        "Interactive Feature Grid: Automated IS Mapping, Parameter Extraction, Gap & Compliance Analysis, Audit Trail",
+        "SIH 2026 Problem Statement 26108 Trust Badge"
+      ]
+    },
+    {
+      "step_id": "dashboard",
+      "name": "Procurement Intelligence Dashboard",
+      "components": [
+        "Analytics summary metrics (Total Analyses, High Confidence Recommendations, Compliance Rate, Active Standards)",
+        "Quick Start Presets (e.g., 'Structural Steel for Bridges', 'Transformers & Electrical Distribution', 'Cement & Concrete Specs', 'Personal Protective Equipment PPE')",
+        "Recent Tender Analysis Activity List with status badges & instant re-open",
+        "Quick Requirement Dropzone / Direct Text Entry trigger"
+      ]
+    },
+    {
+      "step_id": "new_requirement",
+      "name": "New Procurement Spec Workspace",
+      "components": [
+        "Dual Upload Mode: Rich Text Specification Input OR PDF File Upload Simulation",
+        "Pre-loaded Sample Tender Documents dropdown for instant 1-click evaluation (e.g. 'NHAI Highway Guardrail Tender', 'CPWD Concrete Supply Tender', 'Indian Railways Locomotive Cable Specification')",
+        "Procurement Context Selectors (Department, Sector: Civil/Electrical/Mechanical/Textiles/Chemical, Budget Scope)",
+        "Analyze Tender Spec CTA with loading state triggering processing pipeline"
+      ]
+    },
+    {
+      "step_id": "progress",
+      "name": "AI Analysis Pipeline Stream",
+      "components": [
+        "Step-by-step pipeline visualization: 1. OCR & PDF Text Extraction -> 2. Product & Technical Entity Extraction -> 3. Semantic IS Standard Search -> 4. Clause Evidence Matching & Gap Scoring",
+        "Live progress bar with simulated millisecond step triggers and status updates"
+      ]
+    },
+    {
+      "step_id": "requirement_analysis",
+      "name": "Extracted Technical Breakdown",
+      "components": [
+        "Structured Extraction Cards: Identified Product Category, Intended Scope & Operating Environment, Extracted Key Terms",
+        "Technical Parameters Matrix (Parameter Name, Value, Unit, Standard Benchmark comparison)",
+        "Editable parameter tags allowing user refinement before final recommendation generation"
+      ]
+    },
+    {
+      "step_id": "recommended_standards",
+      "name": "Ranked IS Standards Recommendations",
+      "components": [
+        "Ranked Recommendation List with Relevance Confidence % (e.g., IS 2062:2011 - 98% Match)",
+        "Standard Status Pill (🟢 Current / 🟡 Under Revision / 🔴 Withdrawn)",
+        "Why Recommended summary statement",
+        "Expandable Clause Evidence Accordion (exact text alignment from IS document)",
+        "Action Buttons: View Full IS Spec, Perform Gap Analysis, Bookmark for Tender Brief"
+      ]
+    },
+    {
+      "step_id": "standard_detail",
+      "name": "Full IS Standard Detailed View",
+      "components": [
+        "Standard Header: IS Code, Title, Technical Committee (e.g., MTD 04 Steel Specifications), Year of Last Reaffirmation",
+        "Tabs: Scope & Definitions, Mandatory Clauses & Tolerances, Required Test Methods & Sampling, Amendments & Superseded Standards, Cross-Referenced IS Standards",
+        "Download Official BIS Specification Reference link & Copy Clause Reference tools"
+      ]
+    },
+    {
+      "step_id": "manak_insight_gap",
+      "name": "MANAK Insight & Gap Analysis",
+      "components": [
+        "Compliance Risk Radar & Score (e.g., 85/100 Compliance Readiness)",
+        "Missing Technical Parameters Matrix (e.g. 'Tender omitted Yield Stress tolerance under IS 2062 Class E410')",
+        "Ambiguity Warning Flags in Tender Drafting",
+        "AI Specification Enhancement Suggestions (exact text to paste into GeM or Tender Document to ensure quality compliance)"
+      ]
+    },
+    {
+      "step_id": "history",
+      "name": "Procurement Analysis History Log",
+      "components": [
+        "Searchable & Filterable Table (by Date, Sector, Department, Standards Count)",
+        "Quick Replay & Comparison View",
+        "Export Analysis Brief as PDF / Printable Tender Specification Appendix",
+        "Delete / Archive records option"
+      ]
+    },
+    {
+      "step_id": "export_and_transparency",
+      "name": "Tender Brief Export & Model Transparency",
+      "components": [
+        "Printable/PDF Tender Specification Brief Modal containing BIS-certified language",
+        "MANAK AI Model Scope & Transparency Panel: Dataset coverage (22,000+ IS standards), Vector embeddings info, Limitations, Official BIS disclaimer"
+      ]
+    }
+  ],
+  "layout_and_spacing": {
+    "grid_mode": "MODE B: High Density Grid for Analytics + Swiss Structural Layout for Reading",
+    "container_padding": "px-4 sm:px-6 lg:px-12 py-8",
+    "card_padding": "p-6 sm:p-8",
+    "card_styling": "bg-white border border-[#E5DFD5] rounded-xl shadow-sm hover:shadow-md transition-all duration-200",
+    "guilloche_overlay_rule": "Use guilloche pattern asset with pointer-events-none opacity-5 or opacity-10 on main container backgrounds and modal header banners."
+  },
+  "testing_and_qa": {
+    "data_testid_convention": "All interactive elements, buttons, tabs, input fields, cards, badges, and metrics MUST include data-testid with role-based kebab-case naming (e.g. data-testid='new-requirement-submit-button', data-testid='is-standard-card-2062', data-testid='gap-analysis-tab').",
+    "js_file_format": "All frontend components must be standard React JavaScript (.js / .jsx) files located in src/components/ and src/pages/."
+  },
+  "instructions_to_main_agent": [
+    "Build a rich, fully responsive, interactive single-page app with tab/workflow switching or router navigation connecting all required steps: Landing -> Dashboard -> New Requirement -> Progress -> Requirement Analysis -> Recommended Standards -> Standard Detail -> MANAK Insight / Gap Analysis -> History.",
+    "Ensure pre-loaded sample procurement documents are available for 1-click testing so judges/users do not need to type long text.",
+    "Include high-fidelity PDF export simulation and printable tender brief generator with official BIS design header styling.",
+    "Integrate guilloche background pattern cleanly without distorting readability.",
+    "Strictly follow the color palette (BIS Manak Red #B81D24, Deep Navy #0B132B, Warm Off-White #FAF8F5).",
+    "Add data-testid attributes to all interactive components for test verification."
+  ]
+}
